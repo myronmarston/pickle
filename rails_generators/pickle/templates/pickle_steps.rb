@@ -82,6 +82,7 @@ Then(/^#{capture_model}'s (\w+) (should(?: not)?) be #{capture_value}$/) do |nam
   when /^-?[0-9_]+$/
     actual_value.send(expectation, eql(expected.to_i))
   else
+    expected = expected.gsub(/^"/, '').gsub(/"$/, '')
     actual_value.to_s.send(expectation, eql(expected))
   end
 end

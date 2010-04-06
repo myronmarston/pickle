@@ -7,6 +7,7 @@ Feature: I can easily create models from my blueprints
   Scenario: I create a user, and see if it looks right
     Given a user exists with name: "Fred"
     Then the user should not have a status
+     And that user's name should be "Fred"
 
   Scenario: I create a user, and see if it looks right
     Given a user exists with name: "Fred", status: "crayzee"
